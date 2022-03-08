@@ -1,10 +1,14 @@
 #!/bin/bash
 
+rm -rf _tmp
+mkdir _tmp
+cp -r * _tmp/
+cd _tmp
+
 python compile.py build_ext --inplace
-mv nisas/core.py nisas/old_core.txt
-mv nisas/core.c nisas/old_core_c.txt
+rm nisas/core.py
+rm nisas/core.c
+# rm tests/integration/test_nisas.py
+# rm tests/integration/test_nisas.c
 
 pytest > test_results.txt
-
-mv nisas/old_core.txt nisas/core.py
-mv nisas/old_core_c.txt nisas/core.c
