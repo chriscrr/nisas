@@ -3,7 +3,7 @@ import importlib
 import sys
 
 # list of Cython modules containing tests
-cython_test_modules = ["tnisas"]
+cython_test_modules = ["test_nisas_core"]
 
 for mod in cython_test_modules:
     try:
@@ -14,5 +14,6 @@ for mod in cython_test_modules:
             item = getattr(mod, name)
             if callable(item) and name.startswith("test_"):
                 setattr(sys.modules[__name__], name, item)
+                print("found")
     except ImportError:
         pass

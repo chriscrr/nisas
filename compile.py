@@ -4,8 +4,8 @@ from Cython.Distutils import build_ext
 
 ext_modules = [
     Extension("nisas.core",  ["nisas/core.py"]),
-    #Extension("tests.integration.test_nisas",
-    #          ["tests/integration/test_nisas.py"]),
+    Extension("tests.integration.test_nisas_core",
+              ["tests/integration/test_nisas_core.py"]),
     #   ... all your modules that need be compiled ...
 ]
 setup(

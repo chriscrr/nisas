@@ -18,5 +18,5 @@ def cytest(func):
 
 
 @cytest
-def test_nisas_runs():
+def test_nisas_runs_using_cython():
     np.testing.assert_array_equal(main(), np.ones(5))
